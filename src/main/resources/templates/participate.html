@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thyeleaf/layout">
+<head>
+    <th:block th:replace="fragments/header :: headFragment"></th:block>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!--구글폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR&display=swap"
+          rel="stylesheet">
+
+</head>
+<body>
+<style>
+body{
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-size: 18px;}
+
+</style>
+<th:block th:replace="fragments/header :: headFragment"></th:block>
+<!--나무심기-->
+<div class="container px-4">
+    <div class="row my-5">
+        <div class="col-5"><img class="w-100 rounded" src="/images/나무심기.jpg"></div>
+        <div class="col-7">
+            <h5 class="font-weight-light mt-3">나무심기</h5>
+            <p>제공물품 : 나무, 삽, 호미, 이름표(사용 후 반납)<br>준비물 : 간식, 점심 등 개인용품<br>
+                주차 : 주차장 협소로 각 구청 셔틀버스 이용, 탑승장소 개별 공지<br>문의전화 : 000-0000-0000</p>
+        </div>
+    </div>
+</div>
+<!--표-->
+<div class="container my-2">
+    <table class="table">
+        <thead class="table-light">
+        <tr>
+            <th scope="col">번호</th>
+            <th scope="col">일시</th>
+            <th scope="col">장소</th>
+            <th scope="col">면적</th>
+            <th scope="col">나무수</th>
+            <th scope="col">인원수</th>
+            <th scope="col">참여하기</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>2020.08.10(금) 10시-12시</td>
+            <td>제주도 서귀포시 남원읍 위미리</td>
+            <td>2ha</td>
+            <td>3천본</td>
+            <td>200명</td>
+            <td><a class="btn btn-success btn-sm" id="participate" href="#!">참여</a></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>2018.03.31(토) 10시-12시</td>
+            <td>용인시 처인구 남동 산86-5(명지대 태교숲길 주변)</td>
+            <td>2ha</td>
+            <td>3천본</td>
+            <td>200명</td>
+            <td><a class="btn btn-secondary disabled btn-sm" href="#!">종료</a></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>2016.04.07(일)</td>
+            <td>몽골 룬솜</td>
+            <td>3ha</td>
+            <td>5천본</td>
+            <td>500명</td>
+            <td><a class="btn btn-secondary disabled btn-sm" href="#!">종료</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container" id="modal" style="display:none;">
+    <form>
+<!--이름-->
+        <div class="mb-3">
+            <label for="name" class="form-label">이름을 입력하세요.</label>
+            <input type="tel" id="name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">전화번호를 입력하세요.</label>
+            <input type="tel" id="phone" class="form-control" placeholder="" aria-label="Example text with two button addons" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+                   required>
+            <div id="phoneHelp" class="form-text">형식: 010-1234-5678.</div>
+        </div>
+        <button type="submit" class="btn btn-success">신청</button></form>
+</div>
+
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+        $('#participate').on('click',function(){
+            $('#modal').show();
+        });
+
+
+</script>
+<br>
+<hr>
+
+<!--나무기부-->
+<div class="container px-4">
+    <div class="row my-5">
+        <div class="col-5"><img class="w-100 rounded" src="/images/나무기부.jpg"></div>
+        <div class="col-7">
+            <h5 class="font-weight-light">나무기부</h5>
+            <p>몽골의 춥고 건조한 사막을 견딜 수 있는 묘목이 필요합니다.
+                <br>비술나무(Ulmus pumila),포플러(Populus sibirica)<br>갈매보리수(Hippophea rhamnoides),몽골 복사나무(Amygdalus mongolica)<br>사막보리수(Elaeagnus
+                moorcroftil),골담초(Caragana microphylia)<br>oo시 oo구 oo동으로 보내주세요.
+                <br>
+            </p>
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+
+<!--기부-->
+<div class="container px-4">
+    <div class="row my-5">
+        <div class="col-5"><img class="w-100 rounded" src="/images/기부.jpg"></div>
+        <div class="col-7">
+            <h5 class="font-weight-light">기부</h5>
+            <p>oo은행 (주)이루다숲 ooo-oo-oooooo-o으로 입금해주세요.
+                <br>기부영수증 발급가능합니다.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
