@@ -1,5 +1,6 @@
 package com.study.board;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,9 +34,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/account/login")
                 .permitAll()
                 .and()
-                .logout()
-                .logoutSuccessUrl("/")
-                .permitAll();
+                .oauth2Login()
+                .loginPage("/account/login")
+                .userInfoEndpoint();
+//                .and()
+//                .logout()
+//                .logoutSuccessUrl("/")
+//                .permitAll();
     }
 
     @Autowired
